@@ -1,0 +1,198 @@
+//-----form--------
+.create-subtask {
+  opacity: 0;
+  width: 35vw;
+  height: 0px;
+  overflow: hidden;
+  position: relative;
+  padding: 10px 5px 5px;
+  outline: 1px dashed var(--sixth-color);
+  border-radius: 10px;
+  transform-origin: top;
+
+  transition: all 0.3s linear;
+
+  &__label-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--font-second-color);
+  }
+
+  &__text-input {
+    width: 100%;
+    height: 80px;
+    padding: 5px;
+
+    resize: none;
+    border: unset;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -3px var(--sixth-color) inset;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--font-second-color);
+    &:focus {
+      border: unset;
+      outline: 1px solid var(--sixth-color);
+    }
+  }
+
+  &__subtask-created-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    cursor: pointer;
+    position: absolute;
+    top: 6px;
+    right: 0px;
+
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 100%;
+    color: var(--first-color);
+    text-shadow:
+      -0 -1px 0 #777777,
+      0 -1px 0 #777777,
+      -0 1px 0 #777777,
+      0 1px 0 #777777,
+      -1px -0 0 #777777,
+      1px -0 0 #777777,
+      -1px 0 0 #777777,
+      1px 0 0 #777777,
+      -1px -1px 0 #777777,
+      1px -1px 0 #777777,
+      -1px 1px 0 #777777,
+      1px 1px 0 #777777,
+      -1px -1px 0 #777777,
+      1px -1px 0 #777777,
+      -1px 1px 0 #777777,
+      1px 1px 0 #777777;
+  }
+  .create-subtask-btn-form {
+    right: 80px;
+    background-color: var(--seventh-color);
+  }
+  .close-subtask-btn-form {
+    right: 20px;
+    background-color: var(--fifth-color);
+  }
+}
+
+.create-subtask_active {
+  display: block;
+  height: 125px;
+  opacity: 1;
+}
+
+//------subtask-block----
+
+.subtask-block {
+  &__checkbox {
+    display: none;
+  }
+  &__checkbox:checked + &__checkbox-label {
+    text-decoration: line-through;
+  }
+
+  &__checkbox-label {
+    cursor: pointer;
+    position: relative;
+    width: 95%;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 140%;
+
+    &::before {
+      opacity: 0.7;
+      content: "";
+      position: relative;
+      align-self: center;
+      flex: 0 0 24px;
+      height: 24px;
+      background-color: var(--sixth-color);
+      border-radius: 4px;
+      margin: 0px 10px 0px 0px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      //top: 4px;
+      left: 4px;
+      width: 16px;
+      height: 16px;
+      background-color: var(--first-color);
+      border-radius: 4px;
+      transform: scale(0);
+      transition: transform 0.3s ease 0s;
+    }
+  }
+
+  &__text {
+    display: flex;
+    width: 100%;
+    max-height: 54px;
+    overflow-y: scroll;
+
+    color: var(--font-first-color);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__btn-remove-task {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: var(--fifth-color);
+
+    color: var(--first-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 43%;
+  }
+
+  &__checkbox:checked + &__checkbox-label::after {
+    transform: scale(1);
+  }
+
+  &__subtask-created-container {
+    max-height: 27vh;
+    overflow-y: scroll;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__subtask {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    outline: 1px solid var(--sixth-color);
+    border-radius: 5px;
+  }
+}

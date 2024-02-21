@@ -1,0 +1,50 @@
+<template id="card-task-template">
+  <div class="card-task" data-id="" data-list="">
+    <div class="card-task__container">
+      <div class="card-task__btn-menu">
+        <img src="components/card-task/assets/ellipsis.svg" alt="меню-карточки">
+      </div>
+
+      <div class="card-task__progress-text-group">
+        <h2 class="card-task__title">title</h2>
+        <p class="card-task__description">description</p>
+      </div>
+
+      <div class="card-task__progress-info-group">
+        <div class="card-task__progress-info">
+          <div class="card-task__progress-btn">
+            <img src="components/card-task/assets/progress-list-Icon.svg" alt="Комментарии"> Progress
+          </div>
+          <div class="card-task__progress-status">
+            <span class="first-value">0</span>/<span class="second-value">10</span>
+          </div>
+        </div>
+        <div class="card-task__progress-line">
+          <div class="card-task__progress-slider"></div>
+        </div>
+      </div>
+
+      <div class="card-task__footer-card">
+        <div class="card-task__date"></div>
+        <div class="card-task__footer-card-info">
+          <div class="card-task__comments-group">
+            <div class="card-task__comments">
+              <img src="components/card-task/assets/comments-icon.svg" alt="Комментарии">
+              <p>7</p>
+            </div>
+            <div class="card-task__files">
+              <img src="components/card-task/assets/attach-icon.svg" alt="Комментарии">
+              <p>2</p>
+            </div>
+          </div>
+          <div class="card-task__peoples-work-group">
+            <div class="card-task__people-work" id="card-task__people-work-1"></div>
+            <div class="card-task__people-work" id="card-task__people-work-2"></div>
+            <div class="card-task__people-work" id="card-task__number-people">+1</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+<script src="./components/card-task/card-task.js"></script>

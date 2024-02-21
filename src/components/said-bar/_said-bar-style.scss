@@ -1,0 +1,17 @@
+.side-bar {
+  width: 318px;
+  height: 100%;
+  padding: 20px 25px;
+
+  background-color: var(--first-color);
+  border-right: 1px solid var(--third-color);
+
+  &__title {
+    cursor: default;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 100%;
+    color: var(--font-first-color);
+  }
+}

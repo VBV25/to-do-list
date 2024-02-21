@@ -1,0 +1,190 @@
+.popup {
+  z-index: 100;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-popup-color);
+
+  &_active {
+    display: flex;
+  }
+
+  &__content {
+    position: relative;
+    width: max-content;
+    height: max-content;
+    min-width: 30%;
+    min-height: 30%;
+    padding: 45px;
+    border-radius: 50px;
+    background-color: var(--first-color);
+  }
+
+  &__btn-close {
+    cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: -60px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--third-color);
+    border: 3px solid var(--fifth-color);
+
+    color: var(--fifth-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+
+    transform: rotate(360deg);
+    animation: exitCrdBtn 15s linear infinite;
+  }
+
+  &__title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    cursor: default;
+    margin-bottom: 15px;
+    color: var(--font-first-color);
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 100%;
+  }
+
+  &__description {
+    cursor: default;
+    height: max-content;
+    max-height: 85px;
+    margin-bottom: 20px;
+    color: var(--font-second-color);
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+  }
+
+  &__btn-create {
+    cursor: pointer;
+    margin: 15px auto 5px;
+    padding: 10px 20px;
+
+    display: flex;
+    align-self: center;
+
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    border-radius: 10px;
+    border-color: var(--seventh-color);
+    color: #fff;
+    box-shadow:
+      0 0 40px 40px var(--sixth-color) inset,
+      0 0 0 0 var(--seventh-color);
+    transition: all 150ms ease-in-out;
+
+    &:hover {
+      color: var(--sixth-color);
+      box-shadow:
+        0 0 10px 0 var(--sixth-color) inset,
+        0 0 10px 4px var(--seventh-color);
+    }
+  }
+  &__error-text-block {
+    width: 100%;
+    min-height: 15px;
+    text-align: center;
+    color: var(--eighth-color);
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 100%;
+  }
+}
+
+//-----KEYFRAMES----
+@keyframes exitCrdBtn {
+  0% {
+    color: var(--fourth-color);
+    font-weight: 600;
+    font-size: 20px;
+    transform: rotate(0deg);
+  }
+
+  3% {
+    color: var(--eighth-color);
+    font-weight: 900;
+    font-size: 16px;
+    transform: rotate(360deg);
+  }
+  47% {
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    right: -60px;
+    font-size: 16px;
+    border: 3px solid var(--fifth-color);
+  }
+  50% {
+    width: 34px;
+    height: 34px;
+    top: 8px;
+    right: -52px;
+    font-size: 26px;
+    text-shadow:
+      -0 -1px 4px #ffffff,
+      0 -1px 4px #ffffff,
+      -0 1px 4px #ffffff,
+      0 1px 4px #ffffff,
+      -1px -0 4px #ffffff,
+      1px -0 4px #ffffff,
+      -1px 0 4px #ffffff,
+      1px 0 4px #ffffff,
+      -1px -1px 4px #ffffff,
+      1px -1px 4px #ffffff,
+      -1px 1px 4px #ffffff,
+      1px 1px 4px #ffffff,
+      -1px -1px 4px #ffffff,
+      1px -1px 4px #ffffff,
+      -1px 1px 4px #ffffff,
+      1px 1px 4px #ffffff;
+    border: 3px solid var(--eighth-color);
+  }
+  53% {
+    width: 50px;
+    height: 50px;
+    top: 0px;
+    right: -60px;
+    font-size: 16px;
+    text-shadow: unset;
+    border: 3px solid var(--fifth-color);
+  }
+  97% {
+    color: var(--eighth-color);
+    font-weight: 900;
+    font-size: 16px;
+  }
+  100% {
+    color: var(--fourth-color);
+    font-weight: 600;
+    font-size: 20px;
+  }
+}

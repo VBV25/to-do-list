@@ -1,0 +1,87 @@
+.create-new-task {
+  display: grid;
+  grid-template-areas:
+    "name-data-row name-data-row"
+    "task-description new-subtask-create"
+    "subtask-list subtask-list";
+  gap: 10px;
+
+  &__row-group {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    grid-area: name-data-row;
+  }
+
+  &__label-input {
+    width: max-content;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--font-second-color);
+    grid-area: task-description;
+  }
+
+  &__name-task {
+    width: 75%;
+  }
+  &__deadline {
+    width: 23%;
+  }
+
+  &__description {
+    width: 35vw;
+
+    textarea {
+      height: 80px;
+      margin-top: 10px;
+      resize: none;
+    }
+  }
+
+  &__input {
+    padding: 5px;
+    width: 100%;
+    border: unset;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px -3px var(--sixth-color) inset;
+
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--font-second-color);
+
+    &:focus {
+      border: unset;
+      outline: 1px solid var(--sixth-color);
+    }
+  }
+
+  & .create-subtask {
+    display: block;
+    height: 125px;
+    opacity: 1;
+    margin: 0px;
+    grid-area: new-subtask-create;
+
+    .close-subtask-btn-form {
+      display: none;
+    }
+
+    .create-subtask-btn-form {
+      right: 8px;
+    }
+  }
+
+  .subtask-block__subtask-created-container {
+    grid-area: subtask-list;
+  }
+}
